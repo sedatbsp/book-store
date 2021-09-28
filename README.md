@@ -66,5 +66,56 @@ Host: localhost:8080
 Authorization: Bearer InternalApiKey123!
 ````
 
-<br>
+#### Save Book
+````
+POST /api/book HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer ...admin
+Content-Type: application/json
+Content-Length: 155
+
+{
+    "title":"Tehlikeli Oyunlar",
+    "price":50,
+    "description":"Tehlikeli Oyunlar, Oğuz Atay'ın ikinci romanıdır.",
+    "author":"Oğuz Atay"
+
+}
+````
+
+#### Delete Book
+````
+DELETE /api/book/6 HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer ...admin
+````
+
+#### Get All Books
+````
+GET /api/book HTTP/1.1
+Host: localhost:8080
+````
+
+#### Save Purchase
+````
+POST /api/purchase-history HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer ...user or admin
+Content-Type: application/json
+Content-Length: 54
+
+{
+    "userId":5,
+    "bookId":6,
+    "price":50
+}
+````
+
+#### Get User Purchases
+````
+GET /api/purchase-history HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer ...user or admin
+````
+
 <br>
