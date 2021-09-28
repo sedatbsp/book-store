@@ -1,0 +1,8 @@
+{
+  "name": "bookstore-spring",
+  "buildpacks": [
+    {
+      "url": "heroku/gradle"
+    }
+  ]
+}
