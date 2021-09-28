@@ -32,6 +32,12 @@ or
 
 ## API Endpoints
 
+Endpoints running at https://bookstore-sedatbsp.herokuapp.com
+
+<small>
+You can test endpoints using the Postman RESTful API testing tool.
+</small>
+
 #### Sign Up
 
 ````
