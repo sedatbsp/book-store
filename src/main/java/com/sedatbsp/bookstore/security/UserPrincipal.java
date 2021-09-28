@@ -1,6 +1,8 @@
 package com.sedatbsp.bookstore.security;
 
+import com.sedatbsp.bookstore.model.Role;
 import com.sedatbsp.bookstore.model.User;
+import com.sedatbsp.bookstore.util.SecurityUtils;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,6 +29,16 @@ public class UserPrincipal implements UserDetails {
     transient private String password; //
     transient private User user; // login işlemi için. Jwt kullanmadan.
     private Set<GrantedAuthority> authorities;
+
+    public static UserPrincipal createSuperUser(){
+        Set<GrantedAuthority> authorities = Set.of(SecurityUtils.convertToAuthority(Role.SYSTEM_ADMIN.name()));
+
+        return UserPrincipal.builder()
+                .id(-1L)
+                .username("system_admin")
+                .authorities(authorities)
+                .build();
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
